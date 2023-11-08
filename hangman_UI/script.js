@@ -53,7 +53,6 @@ window.addEventListener('keydown', (e) => {
     gameOver = true;
   }
   if (!gameOver) {
-    // if (attemptsCount <= maxWrongAttempts) {
     const letter = e.key;
 
     if (/^[a-zA-Z]$/.test(letter)) {
@@ -96,11 +95,6 @@ window.addEventListener('keydown', (e) => {
       }, 2000);
     }
   }
-  // else {
-  //   messageEl.innerText = 'You lost 😈';
-  //   messageEl.classList.add('lose-color');
-  // }
-  // }
 });
 
 displayWord();
