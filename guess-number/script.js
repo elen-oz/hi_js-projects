@@ -5,22 +5,17 @@ console.log(number);
 
 let guesses = 5;
 
-while (true) {
-  let guess = Number(prompt(`Guess a number between 1-100\n${guesses} left`));
+let guess = Number(prompt(`Guess a number between 1-100\n${guesses} left`));
 
-  if (number === guess) {
-    alert('You won');
-    break;
-  } else if (number < guess) {
-    alert('Lower');
-  } else if (number > guess) {
-    alert('Higher');
-  }
+let messageEl = document.querySelector('#message');
 
-  guesses -= 1;
-
-  if (guesses <= 0) {
-    alert('you lost');
-    break;
-  }
+if (number === guess) {
+  messageEl.innerHTML = 'You won';
+  messageEl.classList.add('message--correct');
+} else if (number < guess) {
+  messageEl.innerHTML = 'Lower';
+  messageEl.classList.add('message--incorrect');
+} else if (number > guess) {
+  messageEl.innerHTML = 'Higher';
+  messageEl.classList.add('message--incorrect');
 }

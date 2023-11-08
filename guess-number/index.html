@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .message {
+      text-align: center;
+      padding: 2rem 3rem;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: bisque;
+      font-size: 2rem;
+    }
+    .message--correct {
+      background-color: darkgreen;
+    }
+    .message--incorrect {
+      background-color: coral;
+    }
+  </style>
   <body>
     <h1>Hello</h1>
+    <div class="message" id="message"></div>
     <script src="./script.js"></script>
   </body>
 </html>
