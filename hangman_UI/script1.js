@@ -11,6 +11,7 @@ var words1 = [
     'tongue',
 ];
 var selectedWord1 = words1[Math.floor(Math.random() * words1.length)];
+console.log(selectedWord1);
 var correctLetters1 = [];
 var wrongLetters1 = [];
 var attemptsCount1 = 0;

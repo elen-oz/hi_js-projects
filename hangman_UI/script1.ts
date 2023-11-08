@@ -11,6 +11,7 @@ const words1 = [
   'tongue',
 ];
 let selectedWord1 = words1[Math.floor(Math.random() * words1.length)];
+console.log(selectedWord1);
 const correctLetters1: string[] = [];
 const wrongLetters1: string[] = [];
 let attemptsCount1 = 0;
