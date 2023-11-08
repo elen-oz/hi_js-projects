@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./",
+    "target": "es2016",
+    "lib": ["ES2016", "DOM"],
+    "module": "es6",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "strict": true
+  },
+  "include": ["./*.ts"],
+  "exclude": ["node_modules"]
+}
