@@ -60,6 +60,9 @@ h2 {
   font-weight: 900;
   text-decoration: underline dashed #740000;
 }
+.description span:hover {
+  cursor: url('./img/saw-cur.cur'), auto;
+}
 .word {
   display: flex;
   justify-content: center;
@@ -77,12 +80,19 @@ h2 {
   width: 20px;
 }
 
+.letter:hover {
+  cursor: url('./img/saw-cur.cur'), auto;
+}
+
 .message {
   text-align: center;
-  /* padding: 2rem 3rem; */
-  /* background-color: brown; */
   border-radius: 4px;
 }
+
+.message:hover {
+  cursor: url('./img/saw-cur.cur'), auto;
+}
+
 .info-color {
   padding: 2rem 3rem;
   background-color: darkblue;
