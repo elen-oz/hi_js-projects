@@ -6,6 +6,7 @@ let selectedWord = words[Math.floor(Math.random() * words.length)];
 const correctLetters = [];
 const wrongLetters = [];
 let attemptsCount = 0;
+let gameOver = false;
 const maxWrongAttempts = selectedWord.length;
 
 //* ------ View ------- //
@@ -14,7 +15,7 @@ const wrongLettersEl = document.getElementById('wrong-letters');
 const messageEl = document.getElementById('message');
 
 //* ------ Controller ------ //
-function displayWord() {
+const displayWord = () => {
   wordEl.innerHTML = `
     ${selectedWord
       .split('')
@@ -28,24 +29,31 @@ function displayWord() {
       .join('')}
   `;
 
-  const innerWord = wordEl.innerText.replace(/\n/g, '');
+  const innerWord = wordEl.innerText.split('\n').join('');
 
   if (innerWord.toUpperCase() === selectedWord.toUpperCase()) {
     messageEl.innerText = 'You won! 😈';
-    messageEl.classList.add('final-color');
+    messageEl.classList.add('win-color');
+    gameOver = true;
   }
-}
+};
 
-function updateWrongLettersEl() {
+const updateWrongLettersEl = () => {
   wrongLettersEl.innerHTML = `
     ${wrongLetters.length > 0 ? '<p> Wrong Letters:</p>' : ''}
     ${wrongLetters.map((letter) => `<span>${letter.toUpperCase()}</span>`)}
   `;
-}
+};
 //* ------ Game starts here ----- //
 
 window.addEventListener('keydown', (e) => {
-  if (attemptsCount <= maxWrongAttempts) {
+  if (attemptsCount === maxWrongAttempts) {
+    messageEl.innerText = 'You lost 🤡';
+    messageEl.classList.add('lose-color');
+    gameOver = true;
+  }
+  if (!gameOver) {
+    // if (attemptsCount <= maxWrongAttempts) {
     const letter = e.key;
 
     if (/^[a-zA-Z]$/.test(letter)) {
@@ -87,10 +95,12 @@ window.addEventListener('keydown', (e) => {
         messageEl.classList.remove('info-color');
       }, 2000);
     }
-  } else {
-    messageEl.innerText = 'You lost 😈';
-    messageEl.classList.add('final-color');
   }
+  // else {
+  //   messageEl.innerText = 'You lost 😈';
+  //   messageEl.classList.add('lose-color');
+  // }
+  // }
 });
 
 displayWord();
