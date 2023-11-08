@@ -73,12 +73,14 @@ h2 {
 .message {
   text-align: center;
   /* padding: 2rem 3rem; */
-  background-color: brown;
+  /* background-color: brown; */
   border-radius: 4px;
 }
 .info-color {
+  padding: 2rem 3rem;
   background-color: darkblue;
 }
 .final-color {
+  padding: 2rem 3rem;
   background-color: brown;
 }

@@ -5,13 +5,13 @@ const words = ['leg', 'foot', 'arm', 'hand', 'toe', 'finger'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 const correctLetters = [];
 const wrongLetters = [];
-const maxWrongAttempts = 6;
+let attemptsCount = 0;
+const maxWrongAttempts = selectedWord.length;
 
 //* ------ View ------- //
 const wordEl = document.getElementById('word');
 const wrongLettersEl = document.getElementById('wrong-letters');
 const messageEl = document.getElementById('message');
-const figureParts = document.querySelectorAll('.figure-part');
 
 //* ------ Controller ------ //
 function displayWord() {
@@ -31,7 +31,8 @@ function displayWord() {
   const innerWord = wordEl.innerText.replace(/\n/g, '');
 
   if (innerWord.toUpperCase() === selectedWord.toUpperCase()) {
-    messageEl.innerText = 'You won! 😈 \nJust for now....';
+    messageEl.innerText = 'You won! 😈';
+    messageEl.classList.add('final-color');
   }
 }
 
@@ -40,37 +41,55 @@ function updateWrongLettersEl() {
     ${wrongLetters.length > 0 ? '<p> Wrong Letters:</p>' : ''}
     ${wrongLetters.map((letter) => `<span>${letter.toUpperCase()}</span>`)}
   `;
-  if (wrongLetters.length >= maxWrongAttempts) {
-    messageEl.innerText = 'You lost 😈';
-  }
 }
+//* ------ Game starts here ----- //
 
 window.addEventListener('keydown', (e) => {
-  // messageEl.classList.remove('info-color');
-  // messageEl.innerText = ``;
+  if (attemptsCount <= maxWrongAttempts) {
+    const letter = e.key;
 
-  const letter = e.key;
-  if (/^[a-zA-Z]$/.test(e.key)) {
-    if (selectedWord.includes(letter)) {
-      if (!correctLetters.includes(letter)) {
-        correctLetters.push(letter);
+    if (/^[a-zA-Z]$/.test(letter)) {
+      if (selectedWord.includes(letter)) {
+        if (!correctLetters.includes(letter)) {
+          correctLetters.push(letter);
 
-        displayWord();
+          displayWord();
+        } else {
+          messageEl.innerText = `${letter.toUpperCase()} - was already!`;
+          messageEl.classList.add('info-color');
+
+          setTimeout(() => {
+            messageEl.innerText = '';
+            messageEl.classList.remove('info-color');
+          }, 2000);
+        }
       } else {
-        alert('There is some kind of error...');
+        if (!wrongLetters.includes(letter)) {
+          wrongLetters.push(letter);
+          attemptsCount += 1;
+          updateWrongLettersEl();
+        } else {
+          messageEl.innerText = `${letter.toUpperCase()} - was already!`;
+          messageEl.classList.add('info-color');
+
+          setTimeout(() => {
+            messageEl.innerText = '';
+            messageEl.classList.remove('info-color');
+          }, 2000);
+        }
       }
     } else {
-      if (!wrongLetters.includes(letter)) {
-        wrongLetters.push(letter);
+      messageEl.innerText = `${letter.toUpperCase()} - is not a letter!`;
+      messageEl.classList.add('info-color');
 
-        updateWrongLettersEl();
-      } else {
-        // messageEl.classList.add('info-color');
-        messageEl.innerText = `${letter} - was already!`;
-      }
+      setTimeout(() => {
+        messageEl.innerText = '';
+        messageEl.classList.remove('info-color');
+      }, 2000);
     }
   } else {
-    messageEl.innerText = `${letter} - is not a letter!`;
+    messageEl.innerText = 'You lost 😈';
+    messageEl.classList.add('final-color');
   }
 });
 
