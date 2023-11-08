@@ -1,7 +1,17 @@
 'use strict';
 
 //* ------ Model ------- //
-const words = ['leg', 'foot', 'arm', 'hand', 'toe', 'finger'];
+const words = [
+  'leg',
+  'foot',
+  'arm',
+  'hand',
+  'toe',
+  'finger',
+  'head',
+  'nose',
+  'tongue',
+];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 const correctLetters = [];
 const wrongLetters = [];

@@ -1,5 +1,15 @@
 //* ------ Model ------- //
-const words1 = ['leg', 'foot', 'arm', 'hand', 'toe', 'finger'];
+const words1 = [
+  'leg',
+  'foot',
+  'arm',
+  'hand',
+  'toe',
+  'finger',
+  'head',
+  'nose',
+  'tongue',
+];
 let selectedWord1 = words1[Math.floor(Math.random() * words1.length)];
 const correctLetters1: string[] = [];
 const wrongLetters1: string[] = [];
@@ -8,7 +18,6 @@ let gameOver1 = false;
 const maxWrongAttempts1 = selectedWord1.length;
 
 //* ------ View ------- //
-// const wordEl1 = document.querySelector('#word');
 const wordEl1 = document.querySelector('#word') as HTMLElement;
 
 const wrongLettersEl1 = document.querySelector('#wrong-letters') as HTMLElement;

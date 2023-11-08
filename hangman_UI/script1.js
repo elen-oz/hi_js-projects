@@ -1,5 +1,15 @@
 //* ------ Model ------- //
-var words1 = ['leg', 'foot', 'arm', 'hand', 'toe', 'finger'];
+var words1 = [
+    'leg',
+    'foot',
+    'arm',
+    'hand',
+    'toe',
+    'finger',
+    'head',
+    'nose',
+    'tongue',
+];
 var selectedWord1 = words1[Math.floor(Math.random() * words1.length)];
 var correctLetters1 = [];
 var wrongLetters1 = [];
@@ -7,7 +17,6 @@ var attemptsCount1 = 0;
 var gameOver1 = false;
 var maxWrongAttempts1 = selectedWord1.length;
 //* ------ View ------- //
-// const wordEl1 = document.querySelector('#word');
 var wordEl1 = document.querySelector('#word');
 var wrongLettersEl1 = document.querySelector('#wrong-letters');
 var messageEl1 = document.querySelector('#message');
