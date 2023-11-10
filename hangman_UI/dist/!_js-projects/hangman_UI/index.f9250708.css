@@ -1,0 +1,124 @@
+@import "https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway&family=Reenie+Beanie&display=swap";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  font-family: Raleway, sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20px 0 0;
+  font-family: Permanent Marker, cursive;
+  font-size: 2.6rem;
+}
+
+h1:hover {
+  cursor: url("../../saw-cur.ef45bdd8.cur"), auto;
+}
+
+h2 {
+  margin: .5rem 0;
+}
+
+.wrapper {
+  color: #fff;
+  background-image: url("../../sddefault.30c0b767.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.content {
+  background-color: #00000080;
+  border-radius: 4px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 35rem;
+  height: 80vh;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+}
+
+.game-container {
+  width: 450px;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.description {
+  text-align: center;
+  padding: 2rem 0;
+  font-family: Reenie Beanie, cursive;
+  font-size: 2.5rem;
+}
+
+.description span {
+  color: #920101;
+  font-weight: 900;
+  -webkit-text-decoration: underline dashed #740000;
+  text-decoration: underline dashed #740000;
+}
+
+.description span:hover {
+  cursor: url("../../saw-cur.ef45bdd8.cur"), auto;
+}
+
+.text-action {
+  font-size: 1.5rem;
+}
+
+.word {
+  justify-content: center;
+  display: flex;
+}
+
+.letter {
+  color: brown;
+  border-bottom: 3px solid brown;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 50px;
+  margin: 0 3px;
+  font-size: 30px;
+  display: inline-flex;
+}
+
+.letter:hover {
+  cursor: url("../../saw-cur.ef45bdd8.cur"), auto;
+}
+
+.message {
+  text-align: center;
+  border-radius: 4px;
+}
+
+.message:hover {
+  cursor: url("../../saw-cur.ef45bdd8.cur"), auto;
+}
+
+.info-color {
+  background-color: #00008b;
+  padding: 2rem 3rem;
+}
+
+.win-color {
+  background-color: green;
+  padding: 2rem 3rem;
+}
+
+.lose-color {
+  background-color: brown;
+  padding: 2rem 3rem;
+}
+
