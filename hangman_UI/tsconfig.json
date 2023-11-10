@@ -5,9 +5,10 @@
     "lib": ["ES2016", "DOM"],
     "module": "es6",
     "noImplicitAny": true,
-    "sourceMap": true,
     "allowJs": true,
-    "strict": true
+    "strict": true,
+    "experimentalDecorators": true,
+    "jsxImportSource": "preact"
   },
   "include": ["./*.ts"],
   "exclude": ["node_modules"]

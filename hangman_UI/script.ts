@@ -1,15 +1,5 @@
 //* ------ Model ------- //
-const words = [
-  'leg',
-  'foot',
-  'arm',
-  'hand',
-  'toe',
-  'finger',
-  'head',
-  'nose',
-  'tongue',
-];
+const words = ['leg', 'foot', 'arm', 'hand', 'toe', 'finger', 'tongue'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 console.log(selectedWord);
 const correctLetters: string[] = [];
