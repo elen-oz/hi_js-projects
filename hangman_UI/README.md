@@ -1,5 +1,7 @@
 ## Hangman Game
 
+[View Demo](https://charming-monstera-12e2dc.netlify.app/)
+
 Select a letter to figure out a hidden word in a set amount of chances
 
 ## Project Specifications
